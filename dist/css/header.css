@@ -99,8 +99,8 @@
 
 .nav-menu-container {
   background: #ded9d4;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
   margin-right: 10px;
   display: -webkit-box;
   display: -ms-flexbox;

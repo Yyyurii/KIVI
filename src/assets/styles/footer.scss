@@ -1,0 +1,24 @@
+.footer {
+  background: #221f1a;
+  color: white;
+  padding: 1.5% 19% 3.5%;
+  font-size: 24px;
+  line-height: 28px;
+  position: relative;
+  min-height: 250px;
+  display: flex;
+  justify-content: space-between;
+
+  &__logo {
+    display: flex;
+    align-items: flex-end
+  }
+
+  &__social-network {
+    display: flex;
+  }
+
+  &__social-network-item {
+    padding-right: 23%;
+  }
+}
