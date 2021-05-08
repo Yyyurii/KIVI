@@ -13,7 +13,7 @@
   &__img {
     max-width: 262px;
     width: 100%;
-    height: 262px;
+    min-height: 262px;
     border-radius: 40px;
     background-color: #d27eaf;
     display: flex;

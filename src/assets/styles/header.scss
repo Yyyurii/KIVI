@@ -1,15 +1,17 @@
 .header {
   background: #221f1a;
   color: white;
-  padding: 4% 19% 0;
+  padding: 4% 0 0;
   font-size: 24px;
   line-height: 28px;
   position: relative;
+  z-index: 1;
 
   &__top-header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 30px;
+    max-width: 1190px;
+    margin: 0 auto 30px;
   }
 
   &__phone-numbers {
@@ -31,6 +33,7 @@
 .circle {
   position: absolute;
   border-radius: 50%;
+  z-index: -1;
 }
 
 .big-pink-circle {
@@ -67,11 +70,15 @@
 
 .nav {
   display: flex;
+  max-width: 1190px;
+  margin: 0 auto;
   a {
     text-decoration: none;
     padding: 10px 15px;
     pointer-events: none;
-  } 
+    color: #4e4e4e;
+  }
+
 
   &__menu {
     display: flex;
@@ -91,6 +98,13 @@
   text-align: center;
   border-bottom: 5px solid #888582;
   cursor: pointer;
+}
+
+.nav-menu-container:hover {
+  background: #de9447;
+  a {
+    color: white;
+  }
 }
 
 .nav-block {

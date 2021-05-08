@@ -5,5 +5,6 @@
 }
 
 .main-content {
-  margin: 1.5% 19% 3.5%;
+  margin: 1.5% auto 3.5%;
+  max-width: 1190px;
 }
