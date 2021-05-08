@@ -1,7 +1,7 @@
 .header {
   background: #221f1a;
   color: white;
-  padding: 4% 19%;
+  padding: 4% 19% 0;
   font-size: 24px;
   line-height: 28px;
   position: relative;
@@ -9,6 +9,7 @@
   &__top-header {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 30px;
   }
 
   &__phone-numbers {
@@ -62,4 +63,34 @@
   background-color: #de9447;
   top: 8%;
   right: 10%;
+}
+
+.nav {
+  display: flex;
+  a {
+    text-decoration: none;
+    padding: 10px 15px;
+  } 
+
+  &__menu {
+    display: flex;
+    height: 100%;
+  }
+
+}
+
+.nav-menu-container {
+  background: #ded9d4;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-bottom: 5px solid #888582;
+}
+
+.nav-block {
+  margin-right: 30px;
 }
