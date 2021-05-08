@@ -1,10 +1,11 @@
 .header {
   background: #221f1a;
   color: white;
-  padding: 4% 19% 0;
+  padding: 4% 0 0;
   font-size: 24px;
   line-height: 28px;
   position: relative;
+  z-index: 1;
 }
 
 .header__top-header {
@@ -14,7 +15,8 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-bottom: 30px;
+  max-width: 1190px;
+  margin: 0 auto 30px;
 }
 
 .header__phone-numbers {
@@ -45,6 +47,7 @@
 .circle {
   position: absolute;
   border-radius: 50%;
+  z-index: -1;
 }
 
 .big-pink-circle {
@@ -83,12 +86,15 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  max-width: 1190px;
+  margin: 0 auto;
 }
 
 .nav a {
   text-decoration: none;
   padding: 10px 15px;
   pointer-events: none;
+  color: #4e4e4e;
 }
 
 .nav__menu {
@@ -115,6 +121,14 @@
   text-align: center;
   border-bottom: 5px solid #888582;
   cursor: pointer;
+}
+
+.nav-menu-container:hover {
+  background: #de9447;
+}
+
+.nav-menu-container:hover a {
+  color: white;
 }
 
 .nav-block {
