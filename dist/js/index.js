@@ -1,14 +1,20 @@
 console.log('hello')
 
-const iconMenu = document.querySelector('.label_checkbox');
+const navMenuItem = document.querySelectorAll('.nav-menu-container');
+const nav = document.querySelector('.nav');
 
-if (iconMenu) {
-  const menuBody = document.querySelector('.burger__list');
-  
-  iconMenu.addEventListener('click', (e) => {
-    menuBody.classList.toggle('_active');
-  })
-}
+nav.addEventListener('click', (event) => {
+  if (event.target && event.target.classList.contains('nav-menu-container')) {
+    navMenuItem.forEach((item, i) => {
+      if (event.target == item) {
+        item.classList.toggle('_active');
+      } else {
+        item.classList.remove('_active');
+      }
+    })
+  }
+})
+
 
 //webp
 function testWebP(callback) {

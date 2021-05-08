@@ -52,6 +52,7 @@
   padding: 1% 2%;
   outline: none;
   color: white;
+  cursor: pointer;
 }
 
 .news-title {

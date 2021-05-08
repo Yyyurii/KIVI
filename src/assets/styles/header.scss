@@ -70,6 +70,7 @@
   a {
     text-decoration: none;
     padding: 10px 15px;
+    pointer-events: none;
   } 
 
   &__menu {
@@ -89,8 +90,14 @@
   align-items: center;
   text-align: center;
   border-bottom: 5px solid #888582;
+  cursor: pointer;
 }
 
 .nav-block {
   margin-right: 30px;
+}
+
+._active {
+  border-bottom: none;
+  background: white;
 }
