@@ -1,0 +1,9 @@
+.wrapper {
+  max-width: 1920px;
+  margin: 0 auto;
+  font-family: 'OpenSans', sans-serif;
+}
+
+.main-content {
+  margin: 1.5% 19% 3.5%;
+}
