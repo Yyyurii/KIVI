@@ -9,6 +9,33 @@
   max-width: 1190px;
 }
 
-.active {
-  color: red;
+.main-content__btn-block {
+  text-align: center;
+}
+
+.main-content__btn-to-start-page {
+  background: #de9447;
+  font-size: 36px;
+  border-radius: 36px;
+  border: 1px solid black;
+  padding: 1% 2%;
+  outline: none;
+  color: white;
+  cursor: pointer;
+}
+
+.tab_item h1 {
+  text-align: center;
+  font-size: 46px;
+}
+
+.news-title {
+  font-size: 34px;
+  padding-bottom: 15px;
+}
+
+.news-text {
+  font-size: 20px;
+  line-height: 25px;
+  white-space: pre-line;
 }

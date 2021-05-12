@@ -1,0 +1,27 @@
+.main-tab {
+
+  &__argument-block {
+    background-color: #e1e1e1;
+    border-radius: 40px;
+    display: flex;
+    margin: 40px 0;
+  }
+
+  &__img {
+    max-width: 262px;
+    width: 100%;
+    min-height: 262px;
+    border-radius: 40px;
+    background-color: #d27eaf;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__text-block {
+    display: flex;
+    flex-direction: column;
+    padding: 3%;
+  }
+
+}

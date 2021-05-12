@@ -32,8 +32,8 @@ testWebP(function (support) {
 
 //tabs
 $(".tab_item").not(":first").hide();
+$(navMenuItem).first().addClass("_active");
 $(".tab").click(function() {
-  console.log('tabs')
 	$(".tab").removeClass("active").eq($(this).index()).addClass("active");
 	$(".tab_item").hide().eq($(this).index()).fadeIn()
 }).eq(0).addClass("active");

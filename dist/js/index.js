@@ -6,7 +6,7 @@ const nav = document.querySelector('.nav');
 nav.addEventListener('click', (event) => {
   if (event.target && event.target.classList.contains('nav-menu-container')) {
     navMenuItem.forEach((item, i) => {
-      if (event.target == item) {
+      if (event.target == item && event.target.classList.contains('_active') === false) {
         item.classList.toggle('_active');
       } else {
         item.classList.remove('_active');
@@ -32,8 +32,8 @@ testWebP(function (support) {
 
 //tabs
 $(".tab_item").not(":first").hide();
+$(navMenuItem).first().addClass("_active");
 $(".tab").click(function() {
-  console.log('tabs')
 	$(".tab").removeClass("active").eq($(this).index()).addClass("active");
 	$(".tab_item").hide().eq($(this).index()).fadeIn()
 }).eq(0).addClass("active");
