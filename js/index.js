@@ -29,3 +29,11 @@ testWebP(function (support) {
     document.querySelector('body').classList.add('webp')
   }
 });
+
+//tabs
+$(".tab_item").not(":first").hide();
+$(navMenuItem).first().addClass("_active");
+$(".tab").click(function() {
+	$(".tab").removeClass("active").eq($(this).index()).addClass("active");
+	$(".tab_item").hide().eq($(this).index()).fadeIn()
+}).eq(0).addClass("active");
