@@ -87,3 +87,15 @@
 .pizza__cat {
   display: none;
 }
+
+.pizza__img-premio {
+  padding: 0;
+  width: 100%;
+  background: grey;
+  text-align: center;
+  border-radius: 40px 40px 0 0;
+}
+
+.pizza__img-premio img {
+  padding: 5%;
+}
