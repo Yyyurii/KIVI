@@ -6,7 +6,7 @@ const nav = document.querySelector('.nav');
 nav.addEventListener('click', (event) => {
   if (event.target && event.target.classList.contains('nav-menu-container')) {
     navMenuItem.forEach((item, i) => {
-      if (event.target == item && event.target.classList.contains('_active') === false) {
+      if (event.target == item) {
         item.classList.toggle('_active');
       } else {
         item.classList.remove('_active');
