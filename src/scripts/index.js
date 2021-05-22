@@ -41,10 +41,15 @@ $(".tab").click(function() {
 //header fixed
 $(function() {
   const header = $('.header__top-header');
+  const slider = $('.slider');
+  const sliderHeight = slider.height();
   const hederHeight = header.height(); // вычисляем высоту шапки
+  const fixedBlockHeighr = sliderHeight + hederHeight;
+  console.log(fixedBlockHeighr);
    
   $(window).scroll(function() {
-    if($(this).scrollTop() > 1) {
+    console.log($(this).scrollTop())
+    if($(this).scrollTop() > 75) {
      header.addClass('header__top-header__fixed');
      $('body').css({
         'paddingTop': hederHeight+'px' // делаем отступ у body, равный высоте шапки
@@ -54,6 +59,17 @@ $(function() {
      $('body').css({
       'paddingTop': 0 // удаляю отступ у body, равный высоте шапки
      })
+    }
+    if($(this).scrollTop() > 160) {
+     slider.addClass('slider__fixed');
+     $('.main-content').css({
+      'paddingTop': '415px' // делаем отступ у body, равный высоте шапки
+   });
+    } else {
+      slider.removeClass('slider__fixed');
+      $('.main-content').css({
+        'paddingTop': 0 // делаем отступ у body, равный высоте шапки
+     });
     }
   });
  });
