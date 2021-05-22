@@ -7,7 +7,7 @@ nav.addEventListener('click', (event) => {
   if (event.target && event.target.classList.contains('nav-menu-container')) {
     navMenuItem.forEach((item, i) => {
       if (event.target == item) {
-        item.classList.toggle('_active');
+        item.classList.add('_active');
       } else {
         item.classList.remove('_active');
       }
