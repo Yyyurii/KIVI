@@ -19,6 +19,15 @@
   margin: 0 auto 30px;
 }
 
+.header__top-header__fixed {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  background: #221f1a;
+  padding: 0 18% 0 18%;
+}
+
 .header__phone-numbers {
   display: -webkit-box;
   display: -ms-flexbox;

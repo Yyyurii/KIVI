@@ -37,3 +37,23 @@ $(".tab").click(function() {
 	$(".tab").removeClass("active").eq($(this).index()).addClass("active");
 	$(".tab_item").hide().eq($(this).index()).fadeIn()
 }).eq(0).addClass("active");
+
+//header fixed
+$(function() {
+  let header = $('.header__top-header');
+  let hederHeight = header.height(); // вычисляем высоту шапки
+   
+  $(window).scroll(function() {
+    if($(this).scrollTop() > 1) {
+     header.addClass('header__top-header__fixed');
+     $('body').css({
+        'paddingTop': hederHeight+'px' // делаем отступ у body, равный высоте шапки
+     });
+    } else {
+     header.removeClass('header__top-header__fixed');
+     $('body').css({
+      'paddingTop': 0 // удаляю отступ у body, равный высоте шапки
+     })
+    }
+  });
+ });

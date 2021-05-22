@@ -12,6 +12,15 @@
     justify-content: space-between;
     max-width: 1190px;
     margin: 0 auto 30px;
+
+    &__fixed {
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      background: #221f1a;
+      padding: 0 18% 0 18%;
+    }
   }
 
   &__phone-numbers {
@@ -28,6 +37,8 @@
   &__address {
     padding: 10px;
   }
+
+
 }
 
 .circle {
@@ -72,6 +83,7 @@
   display: flex;
   max-width: 1190px;
   margin: 0 auto;
+
   a {
     text-decoration: none;
     padding: 10px 15px;
@@ -102,12 +114,14 @@
 
 .nav-menu-container:hover {
   background: #de9447;
+
   a {
     color: white;
   }
 }
 
-.shares-tab, .coffee-tab  {
+.shares-tab,
+.coffee-tab {
   margin-right: 30px;
 }
 
