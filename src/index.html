@@ -10,9 +10,9 @@
   <link rel="stylesheet" href="css/header.min.css">
   <link rel="stylesheet" href="css/fonts.min.css">
   <link rel="stylesheet" href="css/slider.min.css">
-  <link rel="stylesheet" href="css/main-tab.min.css">
-  <link rel="stylesheet" href="css/shares-tab.min.css">
-  <link rel="stylesheet" href="css/pizza-tab.min.css">
+  <link rel="stylesheet" href="css/main.min.css">
+  <link rel="stylesheet" href="css/shares.min.css">
+  <link rel="stylesheet" href="css/pizza.min.css">
   <link rel="stylesheet" href="css/footer.min.css">
   <title>KIVI</title>
 </head>
@@ -80,9 +80,15 @@
 
     <section class="main-content">
 
-      @@include('main-tab.html')
-      @@include('shares-tab.html')
-      @@include('pizza-tab.html')
+      @@include('main.html')
+      @@include('shares.html')
+      @@include('pizza.html')
+      @@include('hot-drinks.html')
+      @@include('cold-drinks.html')
+      @@include('bake.html')
+      @@include('coffee-beans.html')
+      @@include('about-us.html')
+      
 
       <div class="main-content__btn-block">
         <button class="main-content__btn-to-start-page">До початку сторінки</button>
@@ -112,6 +118,7 @@
     crossorigin="anonymous"></script>
   <script src="js/index.js"></script>
   <script src="js/mainTabRender.js"></script>
+  <script src="js/aboutUsRender.js"></script>
 </body>
 
 </html>

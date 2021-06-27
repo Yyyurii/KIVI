@@ -50,11 +50,8 @@
 }
 
 .inform-block__img {
-  max-width: 262px;
   width: 100%;
-  min-height: 262px;
   border-radius: 40px;
-  background-color: #d27eaf;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -64,6 +61,11 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.inform-block__img img {
+  max-width: 530px;
+  border-radius: 40px;
 }
 
 .inform-block__text-block {

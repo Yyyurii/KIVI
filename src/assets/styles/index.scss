@@ -52,14 +52,19 @@
   }
 
   &__img {
-    max-width: 262px;
+    // max-width: 262px;
     width: 100%;
-    min-height: 262px;
+    // min-height: 262px;
     border-radius: 40px;
-    background-color: #d27eaf;
+    // background-color: #d27eaf;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    img {
+      max-width: 530px;
+      border-radius: 40px;
+    }
   }
 
   &__text-block {

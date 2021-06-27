@@ -17,10 +17,7 @@ class informBlock {
       <div class="inform-block__text-block">
         <span class="pattern-title">${this.title}</span>
         <span class="pattern-text">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere maxime aliquam
-          totam eum ullam! Qui repudiandae ut itaque nam dolores, iusto, perferendis repellendus tempore blanditiis
-          consequatur obcaecati fugit impedit sint similique adipisci labore? Quasi doloremque deleniti recusandae
-          optio hic, vitae corporis natus obcaecati nemo quidem dolore reprehenderit suscipit tempore molestiae!
+          ${this.text}
         </span>
       </div>
      `;
@@ -29,20 +26,20 @@ class informBlock {
 }
 
 new informBlock(
-  'main-tab',
+  'main',
   'three-brothers.png',
   'Користь',
   'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere maxime aliquam totam eum ullam! Qui repudiandae ut itaque nam dolores, iusto, perferendis repellendus tempore blanditiis consequatur obcaecati fugit impedit sint similique adipisci labore? Quasi doloremque deleniti recusandae optio hic, vitae corporis natus obcaecati nemo quidem dolore reprehenderit suscipit tempore molestiae!'
 ).render();
 new informBlock(
-  'main-tab',
+  'main',
   'wifi.png',
   'WiFi з твоєї чашки',
   'Ретльно підібрані радіохвилі для інстаграму, фейсбуку, та Ютубу. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime, minus.',
   'inform-block__reverse'
 ).render();
 new informBlock(
-  'main-tab',
+  'main',
   'three-brothers.png',
   'Три брати',
   ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores ratione architecto ullam, accusantium corrupti illo quasi pariatur. Esse, exercitationem deleniti!'
