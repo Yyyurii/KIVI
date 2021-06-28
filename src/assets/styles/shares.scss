@@ -1,25 +1,17 @@
-.shares-tab {
+@import './home.scss';
+.shares .img-wrap {
+  @include centering;
+  max-width: 450px;
+  height: 450px;
+}
 
-  &__share-block {
-    background-color: #e1e1e1;
-    border-radius: 40px;
-    display: flex;
-    margin: 40px 0;
-  }
-  &__img {
-    max-width: 420px;
-    width: 100%;
-    min-height: 420px;
-    border-radius: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
 
-  &__text-block {
-    display: flex;
-    flex-direction: column;
-    padding: 3%;
-  }
-  
+.shares .img-wrap picture {
+  @include centering;
+  max-width: 450px;
+  height: 450px;
+}
+.shares .img-wrap img {
+  max-width: 450px;
+  border-radius: 40px;
 }
