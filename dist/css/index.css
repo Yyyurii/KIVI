@@ -52,6 +52,7 @@
 .inform-block__img {
   width: 100%;
   border-radius: 40px;
+  background-color: #d27eaf;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
