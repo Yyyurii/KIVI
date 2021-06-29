@@ -1,0 +1,75 @@
+@import './index.scss';
+
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.coffee {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 340px;
+    height: 595px;
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  &__img {
+
+    @include centering;
+    padding: 5%;
+    box-shadow: 0px 10px 18px 3px rgba(34, 60, 80, 0.17) inset;
+    background-color: white;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+
+    img {
+      max-height: 240px;
+      max-width: 100%;
+    }
+  }
+
+  &__description {
+    padding: 5%
+  }
+
+  &__title {
+    @include pattern-title;
+  }
+
+  &__profile {
+    @include pattern-text;
+  }
+
+  li {
+    line-height: 1.5;
+  }
+
+  &__weight {
+    display: flex;
+    justify-content: space-around;
+
+    &-item {
+      @include centering;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background-color: #949494;
+      color: white;
+    }
+  }
+
+  &__price {
+    @include centering;
+    background-color: #221f1a;
+    color: white;
+    font-size: 34px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    padding: 2%;
+  }
+
+}

@@ -3,7 +3,7 @@
   &__menu {
     display: flex;
     flex-wrap: wrap;
-    // justify-content: space-between;
+    justify-content: space-around;
   }
 
   &__container {
@@ -16,7 +16,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    margin: 45px 56px 45px 0;
+    margin: 20px 0;
   }
 
   &__img,
