@@ -1,23 +1,14 @@
 @import './index.scss';
 
-.container {
-  display: flex;
-  background-color: #e1e1e1;
-  border-radius: 40px;
-  margin: 40px 0;
-
-  &_reverse {
-    flex-direction: row-reverse;
-  }
-}
-
-.img-wrap {
-  @include centering;
+.home .img-wrap {
+  background-color: #d27eaf;
   max-width: 260px;
   width: 100%;
   min-height: 260px;
-  background-color: #d27eaf;
-  border-radius: 40px;
+}
+
+.home .img-wrap img {
+  position: relative;
 }
 
 .article-wrap {
