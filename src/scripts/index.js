@@ -31,19 +31,19 @@ testWebP(function (support) {
 });
 
 //tabs
-$(".tab_item").not(":first").hide();
-$(navMenuItem).first().addClass("_active");
-$(".tab").click(function () {
-  $(".tab").removeClass("active").eq($(this).index()).addClass("active");
-  $(".tab_item").hide().eq($(this).index()).fadeIn()
-}).eq(0).addClass("active");
-// document.querySelectorAll('.tab_item').forEach((item, index) => {
-//   if (item.classList.contains('coffee-beans')) {
-//     item.style.display = 'block'
-//   } else {
-//     item.style.display = 'none'
-//   }
-// })
+// $(".tab_item").not(":first").hide();
+// $(navMenuItem).first().addClass("_active");
+// $(".tab").click(function () {
+//   $(".tab").removeClass("active").eq($(this).index()).addClass("active");
+//   $(".tab_item").hide().eq($(this).index()).fadeIn()
+// }).eq(0).addClass("active");
+document.querySelectorAll('.tab_item').forEach((item, index) => {
+  if (item.classList.contains('hot-drinks')) {
+    item.style.display = 'block'
+  } else {
+    item.style.display = 'none'
+  }
+})
 
 //header fixed
 $(function () {
