@@ -1,0 +1,18 @@
+@import './index.scss';
+
+.about {
+  &__map {
+    @include centering;
+    margin: 50px 0;
+  }
+
+  &__adress {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px 0;
+  }
+
+  li {
+    line-height: 1.8;
+  }
+}
