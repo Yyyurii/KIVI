@@ -2,15 +2,8 @@
 .shares .img-wrap {
   @include centering;
   max-width: 450px;
-  height: 450px;
 }
 
-
-.shares .img-wrap picture {
-  @include centering;
-  max-width: 450px;
-  height: 450px;
-}
 .shares .img-wrap img {
   max-width: 450px;
   border-radius: 40px;
