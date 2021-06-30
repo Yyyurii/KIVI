@@ -88,9 +88,9 @@ $slick-opacity-not-active: 0.25 !default;
 
     &:before {
         font-family: $slick-font-family;
-        font-size: 20px;
+        font-size: 70px;
         line-height: 1;
-        color: $slick-arrow-color;
+        color: black;
         opacity: $slick-opacity-default;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -98,7 +98,7 @@ $slick-opacity-not-active: 0.25 !default;
 }
 
 .slick-prev {
-    left: -25px;
+    left: -60px;
 
     [dir="rtl"] & {
         left: auto;
@@ -106,10 +106,10 @@ $slick-opacity-not-active: 0.25 !default;
     }
 
     &:before {
-        content: $slick-prev-character;
+        content: '\2B9C';
 
         [dir="rtl"] & {
-            content: $slick-next-character;
+            content: '\2B9E';
         }
     }
 }
@@ -123,10 +123,10 @@ $slick-opacity-not-active: 0.25 !default;
     }
 
     &:before {
-        content: $slick-next-character;
+        content: '\2B9E';
 
         [dir="rtl"] & {
-            content: $slick-prev-character;
+            content: '\2B9C';
         }
     }
 }
