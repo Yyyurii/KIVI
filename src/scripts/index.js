@@ -80,3 +80,29 @@ $(function () {
   });
 });
 
+//scroll up
+$(function () {
+  $(".scrollupBtn").each(function (index) {
+    $(this).on("click", function () {
+      $("html, body").animate({
+        scrollTop: 0
+      }, 800);
+    });
+  });
+});
+
+
+
+$(window).scroll(function () {
+  if ($(this).scrollTop() > 200) {
+    $('.scrollup').fadeIn();
+  }
+  else {
+    $('.scrollup').fadeOut();
+  }
+
+  // if ($(this).scrollTop() > 100) {
+  //   hamburger.classList.remove('active');
+  //   menuBox.style.visibility = menuBox.style.visibility === 'visible' ? '' : '';
+  // }
+});
