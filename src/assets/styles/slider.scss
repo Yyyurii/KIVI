@@ -1,18 +1,23 @@
 .slider {
   max-width: 1190px;
-  height: 386px;
+  height: 377px;
   background: #221f1a;
   margin: 1.5% auto;
   border-radius: 40px;
+  background-image: url(../images/banner.png);
+  background-repeat: no-repeat;
+  text-align: center;
 
-  &__fixed {
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 72px;
-
-    .main-content {
-      padding: 470px 0;
-    }
+  &__text {
+    font-size: 50px;
+    color: white;
+    
   }
+  // &__fixed {
+  //   position: fixed;
+  //   left: 0;
+  //   right: 0;
+  //   top: 72px;
+  // }
+
 }

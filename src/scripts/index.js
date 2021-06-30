@@ -106,3 +106,6 @@ $(window).scroll(function () {
   //   menuBox.style.visibility = menuBox.style.visibility === 'visible' ? '' : '';
   // }
 });
+
+//slider 
+$('.single-item').slick({dots: true});
