@@ -22,5 +22,10 @@
   &__social-network-item {
     margin-right: 23%;
     cursor: pointer;
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
   }
 }

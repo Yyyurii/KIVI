@@ -34,3 +34,8 @@
   margin-right: 23%;
   cursor: pointer;
 }
+
+.footer__social-network-item a {
+  color: white;
+  text-decoration: none;
+}
