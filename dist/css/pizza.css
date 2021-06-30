@@ -30,6 +30,12 @@
   margin: 20px 0;
 }
 
+.pizza__container:hover {
+  -webkit-box-shadow: 0px 0px 24px 15px rgba(34, 60, 80, 0.2);
+          box-shadow: 0px 0px 24px 15px rgba(34, 60, 80, 0.2);
+  background-color: white;
+}
+
 .pizza__img,
 .pizza__name,
 .pizza__ingredients {

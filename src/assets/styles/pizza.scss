@@ -17,6 +17,11 @@
     align-items: center;
     justify-content: space-between;
     margin: 20px 0;
+
+    &:hover {
+      box-shadow: 0px 0px 24px 15px rgba(34, 60, 80, 0.2);
+      background-color: white;
+    }
   }
 
   &__img,
@@ -78,7 +83,7 @@
     border-radius: 40px 40px 0 0;
   }
 
-  &__img-premio img{
+  &__img-premio img {
     padding: 5%;
   }
 }
