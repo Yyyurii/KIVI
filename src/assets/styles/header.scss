@@ -6,13 +6,15 @@
   line-height: 28px;
   position: relative;
   z-index: 1;
+  
 
   &__top-header {
     display: flex;
     justify-content: space-between;
     max-width: 1190px;
     margin: 0 auto 30px;
-
+    transition: all 0.5s ease 0s;
+    
     &__fixed {
       position: fixed;
       left: 0;
@@ -20,6 +22,9 @@
       top: 0;
       background: rgba(34, 31, 26, 0.7);
       max-width: 1920px;
+      // transform: scale(-0);
+      // transition: all 0.5s ease 0s;
+
 
       .header__logo {
         padding: 0 0 0 19%;
