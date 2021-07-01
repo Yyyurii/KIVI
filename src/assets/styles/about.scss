@@ -16,3 +16,28 @@
     line-height: 1.8;
   }
 }
+
+.smile {
+  background-color: #d27eaf;
+  max-width: 260px;
+  width: 100%;
+  min-height: 260px;
+}
+
+.img-wrap img {
+  position: relative;
+}
+
+.article-wrap {
+  display: flex;
+  flex-direction: column;
+  padding: 3%;
+}
+
+.title {
+  @include pattern-title;
+}
+
+.text {
+  @include pattern-text;
+}

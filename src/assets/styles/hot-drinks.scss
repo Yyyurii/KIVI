@@ -1,22 +1,35 @@
 @import './index.scss';
+
 @mixin menu-list {
   display: grid;
-  grid-template-rows: repeat(7, 1fr);
-  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(1, 1fr);
+  grid-template-columns: 1fr 1fr 0;
+  grid-template-areas:
+    'coffee-name price coffee-img'
+    'coffee-name price coffee-img'
+    'coffee-name price coffee-img'
+    'coffee-name price coffee-img'
+    'coffee-name price coffee-img'
+    'coffee-name price coffee-img'
+    'coffee-name price coffee-img';
   font-size: 56px;
   line-height: 112px;
   font-weight: 500;
-  background-image: url(../images/coffee-list.png);
-  background-repeat: no-repeat;
-  background-position: right;
+
+  .coffee-img {
+    position: relative;
+    right: 400px;
+  }
 }
+
 
 .coffee-list {
-  @include menu-list;
+  @include menu-list();
 }
 
+
+
 .decaf-list {
-  @include menu-list;
-  background-image: url(../images/cacao.png);
+  @include menu-list();
   margin: 50px 0;
 }

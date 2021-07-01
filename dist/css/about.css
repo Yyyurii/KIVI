@@ -120,3 +120,35 @@
 .about li {
   line-height: 1.8;
 }
+
+.smile {
+  background-color: #d27eaf;
+  max-width: 260px;
+  width: 100%;
+  min-height: 260px;
+}
+
+.img-wrap img {
+  position: relative;
+}
+
+.article-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 3%;
+}
+
+.title {
+  font-size: 34px;
+  padding-bottom: 15px;
+}
+
+.text {
+  font-size: 20px;
+  line-height: 25px;
+}
