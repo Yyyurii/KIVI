@@ -48,9 +48,11 @@ $(".tab").click(function () {
 //header fixed
 $(function () {
   const header = $('.header__top-header');
+  
   const slider = $('.slider');
   const sliderHeight = slider.height();
   const hederHeight = header.height(); // вычисляем высоту шапки
+  
   const fixedBlockHeighr = sliderHeight + hederHeight;
   console.log(fixedBlockHeighr);
 
@@ -66,18 +68,33 @@ $(function () {
         'paddingTop': 0 // удаляю отступ у body, равный высоте шапки
       })
     }
-    //   if($(this).scrollTop() > 160) {
-    //    slider.addClass('slider__fixed');
-    //    $('.main-content').css({
-    //     'paddingTop': '415px' // делаем отступ у body, равный высоте шапки
-    //  });
-    //   } else {
-    //     slider.removeClass('slider__fixed');
-    //     $('.main-content').css({
-    //       'paddingTop': 0 // делаем отступ у body, равный высоте шапки
-    //    });
-    //   }
+    if ($(this).scrollTop() > 160) {
+      const headerFixed = $('.header__top-header__fixed');
+      const hederFixedHeight = headerFixed.height();
+      slider.addClass('slider__fixed');
+      $('.main-content').css({
+        'paddingTop': '315px' // делаем отступ у body, равный высоте шапки
+      });
+      $('.slider__fixed').css({
+        'top': hederFixedHeight + 'px',
+        'margin': '0 auto',
+        'background-image': 'none',
+        'border-top': '1px solid white'
+      })
+    } else {
+      slider.removeClass('slider__fixed');
+      slider.css({
+        'top': '0px',
+        'margin': '1.5% auto',
+        'background-image': 'url(../images/banner.png)',
+        'border-top': ''
+      })
+      $('.main-content').css({
+        'paddingTop': 0 // делаем отступ у body, равный высоте шапки
+      });
+    }
   });
+  console.log(hederFixedHeight)
 });
 
 //scroll up
