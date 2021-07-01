@@ -10,8 +10,6 @@
   <link rel="stylesheet" href="css/header.min.css">
   <link rel="stylesheet" href="css/fonts.min.css">
   <link rel="stylesheet" href="css/slider.min.css">
-  <link rel="stylesheet" href="css/slick.min.css">
-  <link rel="stylesheet" href="css/slick-theme.min.css">
   <link rel="stylesheet" href="css/home.min.css">
   <link rel="stylesheet" href="css/shares.min.css">
   <link rel="stylesheet" href="css/pizza.min.css">
@@ -20,6 +18,7 @@
   <link rel="stylesheet" href="css/hot-drinks.min.css">
   <link rel="stylesheet" href="css/footer.min.css">
   <link rel="stylesheet" href="css/scroll-up.min.css">
+  <link rel="stylesheet" href="css/simple-adaptive-slider.min.css">
   <base target="_blank">
   <title>KIVI</title>
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
@@ -89,13 +88,19 @@
 
     </header>
 
-    <div class="single-item">
-      <div class="slider">
-        <span class="slider__text">Пицца для тебя ! - 50%</span>
+    <div class="slider">
+      <div class="slider__wrapper">
+        <div class="slider__items">
+          <div class="slider__item">
+            <span class="slider__text">Пицца для тебя ! - 60%</span>
+          </div>
+          <div class="slider__item">
+            <span class="slider__text">Пицца для тебя ! - 50%</span>
+          </div>
+        </div>
       </div>
-      <div class="slider">
-        <span class="slider__text">Пицца для тебя ! - 60%</span>
-      </div>
+      <a class="slider__control slider__control_prev" href="#" role="button" data-slide="prev"></a>
+      <a class="slider__control slider__control_next" href="#" role="button" data-slide="next"></a>
     </div>
 
     <section class="main-content">
@@ -142,7 +147,7 @@
 
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
     crossorigin="anonymous"></script>
-  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="js/simple-adaptive-slider.js"></script>
   <script src="js/index.js"></script>
 
 </body>
