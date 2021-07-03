@@ -35,11 +35,11 @@
 }
 
 .header__top-header__fixed .header__logo {
-  padding: 0 0 0 19%;
+  padding: 0.5% 0 0 19%;
 }
 
 .header__top-header__fixed .header__basket {
-  padding: 0 19% 0 0;
+  padding: 0.5% 19% 0 0;
 }
 
 .header__contacts {
@@ -50,6 +50,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 0.5% 0 0;
 }
 
 .header__contacts .phone {
@@ -60,6 +61,11 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.header__contacts img {
+  max-width: 30px;
+  width: 100%;
 }
 
 .header__basket {

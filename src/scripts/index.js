@@ -52,12 +52,12 @@ $(window).scroll(function () {
   if ($(this).scrollTop() > 75) {
     header.addClass('header__top-header__fixed');
     $('body').css({
-      'paddingTop': hederHeight + 'px' 
+      'paddingTop': hederHeight + 'px'
     });
   } else {
     header.removeClass('header__top-header__fixed');
     $('body').css({
-      'paddingTop': 0 
+      'paddingTop': 0
     })
   }
   if ($(this).scrollTop() > 160) {
@@ -115,3 +115,40 @@ document.addEventListener('DOMContentLoaded', function () {
     swipe: true,
   });
 });
+
+//basket
+const pizzaBasket = document.querySelector('.pizza__basket');
+let basketArr;
+let pizzaName;
+let pizzaImgSrc;
+let pizzaPrice;
+
+pizzaBasket.addEventListener('click', (event) => {
+  basketArr = Array.prototype.slice.call(event.target.parentElement.parentElement.children);
+  console.log(basketArr);
+  orderCard();
+});
+
+function orderCard() {
+  
+  basketArr.forEach((item, index) => {
+    if(item.classList.contains('pizza__name')) {
+      pizzaName = item.innerText;
+    }
+    if(item.classList.contains('pizza__img')) {
+      pizzaImgSrc = item.innerHTML;
+    }
+    if(item.classList.contains('pizza__img')) {
+      pizzaImgSrc = item.innerHTML;
+    }
+    if(item.classList.contains('pizza__price')) {
+      pizzaPrice = item.innerText.match(/\d+/)[0];
+    }
+    
+  });
+  console.log(pizzaName);
+  console.log(pizzaImgSrc);
+  console.log(pizzaPrice);
+}
+
+

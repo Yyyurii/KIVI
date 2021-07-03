@@ -24,11 +24,11 @@
       max-width: 1920px;
 
       .header__logo {
-        padding: 0 0 0 19%;
+        padding: 0.5% 0 0 19%;
       }
 
       .header__basket {
-        padding: 0 19% 0 0;
+        padding: 0.5% 19% 0 0;
       }
     }
   }
@@ -41,10 +41,16 @@
       'header__contacts-img header__contacts-information'
       'header__contacts-img header__contacts-information';
     align-items: center;
+    padding: 0.5% 0 0;
 
     .phone {
       display: flex;
       flex-direction: column;
+    }
+
+    img {
+      max-width: 30px;
+      width: 100%;
     }
   }
 
