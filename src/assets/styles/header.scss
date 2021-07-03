@@ -6,6 +6,7 @@
   line-height: 28px;
   position: relative;
   z-index: 1;
+  overflow: hidden;
 
   &__top-header {
     display: flex;

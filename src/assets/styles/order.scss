@@ -1,0 +1,77 @@
+@import './index.scss';
+
+.order {
+  max-width: 1190px;
+  margin: 0 auto;
+
+  h1 {
+    text-align: center;
+    font-size: 46px;
+    padding: 1.5%;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    max-width: 1190px;
+    width: 100%;
+    border-bottom: 1px dashed;
+  }
+
+  &__item-details {
+    display: flex;
+    justify-content: space-between;
+    padding: 3%;
+
+    img {
+      max-width: 200px;
+    }
+  }
+
+  &__item-name {
+    @include pattern-title;
+  }
+
+  &__item-ingredients {
+    @include pattern-text;
+  }
+
+  &__price-value {
+    @include pattern-title;
+  }
+
+  &__close-button {
+    font-size: 35px;
+    align-self: flex-start;
+    color: #ded9d4;
+  }
+
+  &__item-price {
+    display: flex;
+    justify-content: flex-end;
+    padding: 3%;
+    @include pattern-title;
+  }
+
+  &__price-value {
+    margin: 35px 0 0;
+  }
+
+  &__quantity {
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+    justify-content: center;
+
+    picture {
+      display: flex;
+      padding: 0 30%;
+    }
+  }
+
+  &__item-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+}

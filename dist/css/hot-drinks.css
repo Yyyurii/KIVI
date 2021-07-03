@@ -7,6 +7,7 @@
 .main-content {
   margin: 1.5% auto 3.5%;
   max-width: 1190px;
+  display: none;
 }
 
 .main-content__btn-block {
