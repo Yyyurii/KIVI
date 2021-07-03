@@ -1,20 +1,20 @@
 .header {
   background: #221f1a;
   color: white;
-  padding: 4% 0 0;
+  padding: 1% 0 0;
   font-size: 24px;
   line-height: 28px;
   position: relative;
   z-index: 1;
-  
 
   &__top-header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     max-width: 1190px;
     margin: 0 auto 30px;
     transition: all 0.5s ease 0s;
-    
+
     &__fixed {
       position: fixed;
       left: 0;
@@ -22,36 +22,35 @@
       top: 0;
       background: rgba(34, 31, 26, 0.7);
       max-width: 1920px;
-      // transform: scale(-0);
-      // transition: all 0.5s ease 0s;
-
 
       .header__logo {
         padding: 0 0 0 19%;
       }
 
-      .header__phone-numbers {
+      .header__basket {
         padding: 0 19% 0 0;
       }
     }
   }
 
-  &__phone-numbers {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-  }
-
-  &__location {
-    display: flex;
+  &__contacts {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+      'header__contacts-img header__contacts-information'
+      'header__contacts-img header__contacts-information';
     align-items: center;
+
+    .phone {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
-  &__address {
-    padding: 10px;
+  &__basket {
+    cursor: pointer;
   }
-
-
 }
 
 .circle {

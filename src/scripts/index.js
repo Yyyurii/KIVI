@@ -1,5 +1,3 @@
-console.log('hello')
-
 const navMenuItem = document.querySelectorAll('.nav-menu-container');
 const nav = document.querySelector('.nav');
 
@@ -14,7 +12,6 @@ nav.addEventListener('click', (event) => {
     })
   }
 })
-
 
 //webp
 function testWebP(callback) {
@@ -55,12 +52,12 @@ $(window).scroll(function () {
   if ($(this).scrollTop() > 75) {
     header.addClass('header__top-header__fixed');
     $('body').css({
-      'paddingTop': hederHeight + 'px' // делаем отступ у body, равный высоте шапки
+      'paddingTop': hederHeight + 'px' 
     });
   } else {
     header.removeClass('header__top-header__fixed');
     $('body').css({
-      'paddingTop': 0 // удаляю отступ у body, равный высоте шапки
+      'paddingTop': 0 
     })
   }
   if ($(this).scrollTop() > 160) {
@@ -68,7 +65,7 @@ $(window).scroll(function () {
     const hederFixedHeight = headerFixed.height();
     slider.addClass('slider__fixed');
     $('.main-content').css({
-      'paddingTop': '315px' // делаем отступ у body, равный высоте шапки
+      'paddingTop': '315px'
     });
     $('.slider__fixed').css({
       'top': hederFixedHeight + 'px',
@@ -85,7 +82,7 @@ $(window).scroll(function () {
       'border-top': ''
     })
     $('.main-content').css({
-      'paddingTop': 0 // делаем отступ у body, равный высоте шапки
+      'paddingTop': 0
     });
   }
 });
@@ -101,8 +98,6 @@ $(function () {
   });
 });
 
-
-
 $(window).scroll(function () {
   if ($(this).scrollTop() > 200) {
     $('.scrollup').fadeIn();
@@ -110,16 +105,10 @@ $(window).scroll(function () {
   else {
     $('.scrollup').fadeOut();
   }
-
-  // if ($(this).scrollTop() > 100) {
-  //   hamburger.classList.remove('active');
-  //   menuBox.style.visibility = menuBox.style.visibility === 'visible' ? '' : '';
-  // }
 });
 
 //slider 
 document.addEventListener('DOMContentLoaded', function () {
-  // инициализация слайдера
   const slider = new SimpleAdaptiveSlider('.slider', {
     autoplay: false,
     interval: 5000,
