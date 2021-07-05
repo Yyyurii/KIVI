@@ -7,7 +7,6 @@
 .main-content {
   margin: 1.5% auto 3.5%;
   max-width: 1190px;
-  display: none;
 }
 
 .main-content__btn-block {
@@ -99,6 +98,7 @@
 .order {
   max-width: 1190px;
   margin: 0 auto;
+  display: none;
 }
 
 .order h1 {
@@ -127,7 +127,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 3%;
+  padding: 3% 3% 1%;
 }
 
 .order__item-details img {
@@ -163,7 +163,7 @@
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  padding: 3%;
+  padding: 1% 3%;
   font-size: 34px;
   padding-bottom: 15px;
 }
@@ -180,9 +180,28 @@
       -ms-flex-align: center;
           align-items: center;
   font-size: 40px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 25px 0 0;
+}
+
+.order__quantity .quantity-img {
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .order__quantity picture {
@@ -190,6 +209,7 @@
   display: -ms-flexbox;
   display: flex;
   padding: 0 30%;
+  cursor: pointer;
 }
 
 .order__item-description {

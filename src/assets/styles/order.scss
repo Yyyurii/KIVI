@@ -3,6 +3,7 @@
 .order {
   max-width: 1190px;
   margin: 0 auto;
+  display: none;
 
   h1 {
     text-align: center;
@@ -21,7 +22,7 @@
   &__item-details {
     display: flex;
     justify-content: space-between;
-    padding: 3%;
+    padding: 3% 3% 1%;
 
     img {
       max-width: 200px;
@@ -49,7 +50,7 @@
   &__item-price {
     display: flex;
     justify-content: flex-end;
-    padding: 3%;
+    padding: 1% 3%;
     @include pattern-title;
   }
 
@@ -61,11 +62,23 @@
     display: flex;
     align-items: center;
     font-size: 40px;
-    justify-content: center;
+    justify-content: space-around;
+    margin: 25px 0 0;
+
+    .quantity-img {
+      cursor: pointer;
+      width: 25px;
+      height: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
 
     picture {
       display: flex;
       padding: 0 30%;
+      cursor: pointer;
     }
   }
 

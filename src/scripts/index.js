@@ -151,4 +151,31 @@ function orderCard() {
   console.log(pizzaPrice);
 }
 
+const plusQuantity = document.querySelectorAll('.order__plus-quantity');
+const minusQuantity = document.querySelector('.order__minus-quantity');
+let currentQuantity = document.querySelector('.order__current-quantity');
+const pizzaCost = document.querySelector('.order__price-grn-value');
+let currentQuantityValue = currentQuantity.innerText;
+let finallyPrice = document.querySelector('.order__finally-price-value');
+let finallyPriceValue = finallyPrice.innerText;
+console.log(currentQuantityValue);
 
+plusQuantity.forEach(item => {
+  item.addEventListener('click', () => {
+    currentQuantityValue++;
+    currentQuantity.innerText = currentQuantityValue;
+    actualPrice();
+  });
+})
+minusQuantity.addEventListener('click', () => {
+  if(currentQuantityValue > 1) {
+    currentQuantityValue--;
+    currentQuantity.innerText = currentQuantityValue;
+    actualPrice();
+  }
+});
+
+function actualPrice() {
+  let currentPrice = currentQuantityValue * finallyPriceValue;
+  finallyPrice.innerText = currentPrice;
+}
