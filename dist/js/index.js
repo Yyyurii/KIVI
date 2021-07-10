@@ -134,12 +134,14 @@ toBasket.forEach(basket => {
   plusBtn.forEach(btn => {
     btn.addEventListener('click', (event) => {
       plusQuantity(event);
+      calculateQuantity(event)
     })
   });
   
   minusBtn.forEach(btn => {
     btn.addEventListener('click', (event) => {
       minusQuantity(event);
+      calculateQuantity(event)
     })
   });
 })();
@@ -201,4 +203,12 @@ function minusQuantity(event) {
   if (!currentQuantityValue == 0 && currentQuantityValue > 1) {
     currentQuantity.innerText = --currentQuantityValue;
   }
+}
+
+function calculateQuantity(event) {
+  let parentEl = event.target.closest('.order__item');
+  let currentQuantity = parentEl.querySelector('.order__current-quantity').innerText;
+  let price = parseInt(parentEl.querySelector('.order__price-value').innerText.match(/\d+/));
+  let totalPay = parentEl.querySelector('.order__finally-price-value');
+  totalPay.innerText = currentQuantity * price;
 }
