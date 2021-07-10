@@ -151,6 +151,7 @@ toBasket.forEach(basket => {
     btn.addEventListener('click', (event) => {
       plusQuantity(event);
       calculateQuantity(event);
+      calculateTotalPay();
     })
   });
   
@@ -158,6 +159,7 @@ toBasket.forEach(basket => {
     btn.addEventListener('click', (event) => {
       minusQuantity(event);
       calculateQuantity(event);
+      calculateTotalPay();
     })
   });
 
@@ -245,7 +247,21 @@ function removeOrderItem(event) {
   let orderList = document.querySelector('.order__list');
   if (orderList.childElementCount > 0) {
     basketQuantity.style.opacity = '1';
+  } else {
+    basketQuantity.style.opacity = '0';
   }
   basketQuantity.innerText = orderList.childElementCount;
   console.log(orderList.childElementCount)
+})();
+
+(calculateTotalPay = () => {
+  const prices = document.querySelectorAll('.order__finally-price-value');
+  const totalPrice = document.querySelector('.order__total-pay-value');
+  let total = 0;
+  
+  prices.forEach(item => {
+    total += Number(item.innerText);
+  });
+  totalPrice.innerText = total;
+  console.log(total);
 })();

@@ -3,11 +3,16 @@
 .order {
   max-width: 1190px;
   margin: 0 auto;
+  display: none;
 
   h1 {
     text-align: center;
     font-size: 46px;
     padding: 1.5%;
+  }
+
+  &__wrap {
+    white-space: pre-line;
   }
 
   &__item {
@@ -86,5 +91,51 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+  }
+
+  input, textarea {
+    border: 2px solid;
+    border-color: rgb(133, 133, 133);
+    border-radius: 5px;
+    font-size: 32px;
+  }
+
+  &__time {
+    font-size: 34px;
+
+    input {
+      font-size: 32px;
+      
+    }
+  }
+
+  &__contacts {
+    font-size: 34px;
+
+    input {
+      font-size: 22px;
+      border-radius: 5px;
+    }
+  }
+
+  &__comment {
+    font-size: 34px;
+
+    textarea {
+      font-size: 22px;
+      resize: horizontal;
+      max-width: 100%;
+    }
+  }
+
+  &__btn {
+    background: #de9447;
+    font-size: 36px;
+    border-radius: 36px;
+    border: 1px solid black;
+    padding: 1% 2%;
+    outline: none;
+    color: white;
+    cursor: pointer;
   }
 }
