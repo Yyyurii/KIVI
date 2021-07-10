@@ -44,29 +44,26 @@
 }
 
 .header__contacts {
-  display: grid;
-  grid-template-columns: 100px 1fr;
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-areas: 'header__contacts-img header__contacts-information' 'header__contacts-img header__contacts-information';
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 0.5% 0 0;
-}
-
-.header__contacts .phone {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
 }
 
-.header__contacts img {
-  max-width: 30px;
-  width: 100%;
+.header__contacts-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__contacts-img {
+  width: 100px;
 }
 
 .header__basket {

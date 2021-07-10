@@ -33,26 +33,19 @@
       }
     }
   }
-
+  
   &__contacts {
-    display: grid;
-    grid-template-columns: 100px 1fr;
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-areas:
-      'header__contacts-img header__contacts-information'
-      'header__contacts-img header__contacts-information';
+    display: inline-flex;
+    flex-direction: column;
+  }
+
+  &__contacts-item {
+    display: flex;
     align-items: center;
-    padding: 0.5% 0 0;
+  }
 
-    .phone {
-      display: flex;
-      flex-direction: column;
-    }
-
-    img {
-      max-width: 30px;
-      width: 100%;
-    }
+  &__contacts-img {
+    width: 100px;
   }
 
   &__basket {
