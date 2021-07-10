@@ -117,65 +117,53 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 //basket
-const pizzaBasket = document.querySelector('.pizza__basket');
-let basketArr;
-let pizzaName;
-let pizzaImgSrc;
-let pizzaPrice;
+const toBasket = document.querySelectorAll('.pizza__basket');
 
-pizzaBasket.addEventListener('click', (event) => {
-  basketArr = Array.prototype.slice.call(event.target.parentElement.parentElement.children);
-  console.log(basketArr);
-  orderCard();
+toBasket.forEach(item => {
+  item.addEventListener('click', (event) => {
+    getElementValue(event)
+
+  })
 });
 
-function orderCard() {
-  
-  basketArr.forEach((item, index) => {
-    if(item.classList.contains('pizza__name')) {
-      pizzaName = item.innerText;
-    }
-    if(item.classList.contains('pizza__img')) {
-      pizzaImgSrc = item.innerHTML;
-    }
-    if(item.classList.contains('pizza__img')) {
-      pizzaImgSrc = item.innerHTML;
-    }
-    if(item.classList.contains('pizza__price')) {
-      pizzaPrice = item.innerText.match(/\d+/)[0];
-    }
-    
-  });
-  console.log(pizzaName);
-  console.log(pizzaImgSrc);
-  console.log(pizzaPrice);
-}
+function renderNewEl(event) {
+  let parentEl = event.target.closest('.pizza__container');
+  let imgSrcEl = parentEl.querySelector('img').getAttribute('src');
+  let nameEl = parentEl.querySelector('.pizza__name').innerText;
+  let ingredientsEl = parentEl.querySelector('.pizza__ingredients').innerText;
+  let priceEl = parentEl.querySelector('.pizza__grn').innerText;
+  let idEl = event.target.dataset.id;
 
-const plusQuantity = document.querySelectorAll('.order__plus-quantity');
-const minusQuantity = document.querySelector('.order__minus-quantity');
-let currentQuantity = document.querySelector('.order__current-quantity');
-const pizzaCost = document.querySelector('.order__price-grn-value');
-let currentQuantityValue = currentQuantity.innerText;
-let finallyPrice = document.querySelector('.order__finally-price-value');
-let finallyPriceValue = finallyPrice.innerText;
-console.log(currentQuantityValue);
+  let orderList = document.querySelector('.order__list');
+  let orderCard = document.createElement('div');
+  orderCard.classList.add('order__item');
+  orderCard.innerHTML = `
+    <div class="order__item-details">
+      <div class="item-img">
+        <img src="${imgSrcEl}" alt="">
+        <div class="order__quantity">
+          <div class="order__minus-quantity quantity-img">
+            <img src="images/minus.svg" alt="minus">
+          </div>
+          <span class="order__current-quantity">1</span>
+          <div class="order__plus-quantity quantity-img">
+            <img src="images/plus.svg" alt="plus">
+          </div>
+        </div>
+      </div>
+      <div class="order__item-description">
+        <div class="order__item-name">${nameEl}</div>
+        <div class="order__item-ingredients">${ingredientsEl}</div>
+        <div class="order__price-value"><span class="order__price-grn-value">${priceEl}</span></div>
+      </div>
+      <div class="order__close-button">X</div>
+    </div>
+    <div class="order__item-price">
+      <div class="order__finally-price">
+        Всього: <span class="order__finally-price-value">118</span> грн
+      </div>
+    </div>
+  `;
+  orderList.append(orderCard);
+};
 
-plusQuantity.forEach(item => {
-  item.addEventListener('click', () => {
-    currentQuantityValue++;
-    currentQuantity.innerText = currentQuantityValue;
-    actualPrice();
-  });
-})
-minusQuantity.addEventListener('click', () => {
-  if(currentQuantityValue > 1) {
-    currentQuantityValue--;
-    currentQuantity.innerText = currentQuantityValue;
-    actualPrice();
-  }
-});
-
-function actualPrice() {
-  let currentPrice = currentQuantityValue * finallyPriceValue;
-  finallyPrice.innerText = currentPrice;
-}
