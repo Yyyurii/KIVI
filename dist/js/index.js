@@ -1,7 +1,11 @@
 const navMenuItem = document.querySelectorAll('.nav-menu-container');
 const nav = document.querySelector('.nav');
+const order = document.querySelector('.order');
+const mainContent = document.querySelector('.main-content');
 
 nav.addEventListener('click', (event) => {
+  order.style.display = 'none';
+  mainContent.style.display = 'block';
   if (event.target && event.target.classList.contains('nav-menu-container')) {
     navMenuItem.forEach((item, i) => {
       if (event.target == item) {
@@ -117,13 +121,24 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 //basket
+const basket = document.querySelector('.header__basket');
 const toBasket = document.querySelectorAll('.pizza__basket');
+const basketQuantity = document.querySelector('.header__basket-quantity');
 
+
+basket.addEventListener('click', () => {
+  order.style.display = 'block';
+  mainContent.style.display = 'none';
+  navMenuItem.forEach(item => {
+    item.classList.remove('_active');
+  })
+});
 
 toBasket.forEach(basket => {
   basket.addEventListener('click', (event) => {
     renderNewEl(event);
     changeQuantity();
+    calculateBasketQuantity();
   })
 });
 
@@ -135,14 +150,14 @@ toBasket.forEach(basket => {
   plusBtn.forEach(btn => {
     btn.addEventListener('click', (event) => {
       plusQuantity(event);
-      calculateQuantity(event)
+      calculateQuantity(event);
     })
   });
   
   minusBtn.forEach(btn => {
     btn.addEventListener('click', (event) => {
       minusQuantity(event);
-      calculateQuantity(event)
+      calculateQuantity(event);
     })
   });
 
@@ -223,4 +238,14 @@ function calculateQuantity(event) {
 function removeOrderItem(event) {
   let parentEl = event.target.closest('.order__item');
   parentEl.remove();
+  calculateBasketQuantity();
 }
+
+(calculateBasketQuantity = () => {
+  let orderList = document.querySelector('.order__list');
+  if (orderList.childElementCount > 0) {
+    basketQuantity.style.opacity = '1';
+  }
+  basketQuantity.innerText = orderList.childElementCount;
+  console.log(orderList.childElementCount)
+})();

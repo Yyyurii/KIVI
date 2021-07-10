@@ -57,7 +57,24 @@
 
   &__basket {
     cursor: pointer;
+    position: relative;
   }
+
+  &__basket-quantity {
+    opacity: 0;
+    position: absolute;
+    top: -6px;
+    left: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #7585f5;
+    transition: opacity 0.5s ease 0s;
+  }
+
 }
 
 .circle {
