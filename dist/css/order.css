@@ -153,6 +153,7 @@
   -ms-flex-item-align: start;
       align-self: flex-start;
   color: #ded9d4;
+  cursor: pointer;
 }
 
 .order__item-price {

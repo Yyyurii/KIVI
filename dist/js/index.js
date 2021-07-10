@@ -130,6 +130,7 @@ toBasket.forEach(basket => {
 (changeQuantity = () => {
   let plusBtn = document.querySelectorAll('.order__plus-quantity');
   let minusBtn = document.querySelectorAll('.order__minus-quantity');
+  let deleteBtn = document.querySelectorAll('.order__close-button');
   
   plusBtn.forEach(btn => {
     btn.addEventListener('click', (event) => {
@@ -144,6 +145,12 @@ toBasket.forEach(basket => {
       calculateQuantity(event)
     })
   });
+
+  deleteBtn.forEach(btn => {
+    btn.addEventListener('click', (event) => {
+      removeOrderItem(event);
+    })
+  })
 })();
 
 
@@ -211,4 +218,9 @@ function calculateQuantity(event) {
   let price = parseInt(parentEl.querySelector('.order__price-value').innerText.match(/\d+/));
   let totalPay = parentEl.querySelector('.order__finally-price-value');
   totalPay.innerText = currentQuantity * price;
+}
+
+function removeOrderItem(event) {
+  let parentEl = event.target.closest('.order__item');
+  parentEl.remove();
 }
