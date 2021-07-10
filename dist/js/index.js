@@ -119,12 +119,32 @@ document.addEventListener('DOMContentLoaded', function () {
 //basket
 const toBasket = document.querySelectorAll('.pizza__basket');
 
-toBasket.forEach(item => {
-  item.addEventListener('click', (event) => {
-    getElementValue(event)
 
+toBasket.forEach(basket => {
+  basket.addEventListener('click', (event) => {
+    renderNewEl(event);
+    changeQuantity();
   })
 });
+
+(changeQuantity = () => {
+  let plusBtn = document.querySelectorAll('.order__plus-quantity');
+  let minusBtn = document.querySelectorAll('.order__minus-quantity');
+  
+  plusBtn.forEach(btn => {
+    btn.addEventListener('click', (event) => {
+      plusQuantity(event);
+    })
+  });
+  
+  minusBtn.forEach(btn => {
+    btn.addEventListener('click', (event) => {
+      minusQuantity(event);
+    })
+  });
+})();
+
+
 
 function renderNewEl(event) {
   let parentEl = event.target.closest('.pizza__container');
@@ -167,3 +187,18 @@ function renderNewEl(event) {
   orderList.append(orderCard);
 };
 
+function plusQuantity(event) {
+  let parentEl = event.target.closest('.order__item');
+  let currentQuantity = parentEl.querySelector('.order__current-quantity');
+  let currentQuantityValue = parentEl.querySelector('.order__current-quantity').innerText;
+  currentQuantity.innerText = ++currentQuantityValue;
+}
+
+function minusQuantity(event) {
+  let parentEl = event.target.closest('.order__item');
+  let currentQuantity = parentEl.querySelector('.order__current-quantity');
+  let currentQuantityValue = parentEl.querySelector('.order__current-quantity').innerText;
+  if (!currentQuantityValue == 0 && currentQuantityValue > 1) {
+    currentQuantity.innerText = --currentQuantityValue;
+  }
+}
