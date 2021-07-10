@@ -138,7 +138,8 @@ toBasket.forEach(basket => {
   basket.addEventListener('click', (event) => {
     renderNewEl(event);
     changeQuantity();
-    calculateBasketQuantity();
+    calculateBasketQuantity(event);
+    calculateTotalPay();
   })
 });
 
