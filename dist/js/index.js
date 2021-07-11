@@ -207,7 +207,7 @@ function renderNewEl(event) {
     </div>
     <div class="order__item-price">
       <div class="order__finally-price">
-        Всього: <span class="order__finally-price-value">118</span> грн
+        Всього: <span class="order__finally-price-value">${priceEl}</span>
       </div>
     </div>
   `;

@@ -36,6 +36,10 @@
   background-color: white;
 }
 
+.pizza__img img {
+  max-width: 100%;
+}
+
 .pizza__img,
 .pizza__name,
 .pizza__ingredients {
@@ -105,5 +109,6 @@
 }
 
 .pizza__img-premio img {
+  max-width: 300px;
   padding: 5%;
 }

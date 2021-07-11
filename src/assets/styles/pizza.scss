@@ -24,6 +24,10 @@
     }
   }
 
+  &__img img {
+    max-width: 100%;
+  }
+
   &__img,
   &__name,
   &__ingredients {
@@ -84,6 +88,7 @@
   }
 
   &__img-premio img {
+    max-width: 300px;
     padding: 5%;
   }
 }
