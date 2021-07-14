@@ -64,31 +64,6 @@ $(window).scroll(function () {
       'paddingTop': 0
     })
   }
-  if ($(this).scrollTop() > 160) {
-    const headerFixed = $('.header__top-header__fixed');
-    const hederFixedHeight = headerFixed.height();
-    slider.addClass('slider__fixed');
-    $('.main-content').css({
-      'paddingTop': '315px'
-    });
-    $('.slider__fixed').css({
-      'top': hederFixedHeight + 'px',
-      'margin': '0 auto',
-      'background-image': 'none',
-      'border-top': '1px solid white'
-    })
-  } else {
-    slider.removeClass('slider__fixed');
-    slider.css({
-      'top': '0px',
-      'margin': '1.5% auto',
-      'background-image': 'url(../images/banner.png)',
-      'border-top': ''
-    })
-    $('.main-content').css({
-      'paddingTop': 0
-    });
-  }
 });
 
 //scroll up
@@ -147,7 +122,7 @@ toBasket.forEach(basket => {
   let plusBtn = document.querySelectorAll('.order__plus-quantity');
   let minusBtn = document.querySelectorAll('.order__minus-quantity');
   let deleteBtn = document.querySelectorAll('.order__close-button');
-  
+
   plusBtn.forEach(btn => {
     btn.addEventListener('click', (event) => {
       plusQuantity(event);
@@ -155,7 +130,7 @@ toBasket.forEach(basket => {
       calculateTotalPay();
     })
   });
-  
+
   minusBtn.forEach(btn => {
     btn.addEventListener('click', (event) => {
       minusQuantity(event);
@@ -259,7 +234,7 @@ function removeOrderItem(event) {
   const prices = document.querySelectorAll('.order__finally-price-value');
   const totalPrice = document.querySelector('.order__total-pay-value');
   let total = 0;
-  
+
   prices.forEach(item => {
     total += Number(item.innerText);
   });

@@ -180,12 +180,4 @@
   background-color: #de9447;
 }
 
-.slider__fixed .slider__indicator {
-  background-color: #000;
-}
-
-.slider__fixed .slider__indicator_active {
-  background-color: #fff;
-}
-
 .webp .slider{ background-image: url(../images/banner.webp); }

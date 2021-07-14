@@ -10,20 +10,23 @@ let path = {
     css: project_folder + "/css/",
     js: project_folder + "/js/",
     img: project_folder + "/images/",
-    fonts: project_folder + "/fonts/"
+    fonts: project_folder + "/fonts/",
+    php: project_folder + "/"
   },
   src: {
     html: [source_folder + "/*.html", "!" + source_folder + "/_*.html"],
     css: source_folder + "/assets/styles/**/*.{scss,css}",
     js: source_folder + "/scripts/**/*.js",
     img: source_folder + "/assets/images/**/*.{png,jpg,svg,gif,ico,webp}",
-    fonts: source_folder + "/assets/fonts/*.ttf"
+    fonts: source_folder + "/assets/fonts/*.ttf",
+    php: source_folder + "/*.php"
   },
   watch: {
     html: source_folder + "/**/*.html",
     css: source_folder + "/assets/styles/**/*.{scss,css}",
     js: source_folder + "/scripts/**/*.js",
-    img: source_folder + "/assets/images/**/*.{jpg,png,svg,gif,ico,webp}"
+    img: source_folder + "/assets/images/**/*.{jpg,png,svg,gif,ico,webp}",
+    php: source_folder + "/*.php"
   },
   clean: "./" + project_folder + "/"
 }
@@ -101,6 +104,13 @@ function js() {
     .pipe(browsersync.stream())
 }
 
+function php() {
+  return src(path.src.php)
+    .pipe(fileinclude())
+    .pipe(dest(path.build.php))
+    .pipe(browsersync.stream())
+}
+
 function images() {
   return src(path.src.img)
     .pipe(
@@ -143,13 +153,14 @@ function watchFiles(params) {
   gulp.watch([path.watch.css], css);
   gulp.watch([path.watch.js], js);
   gulp.watch([path.watch.img], images);
+  gulp.watch([path.watch.php], php);
 }
 
 function clean(params) {
   return del(path.clean);
 }
 
-let build = gulp.series(clean, gulp.parallel(js, css, html, images, fonts));
+let build = gulp.series(clean, gulp.parallel(js, css, html, images, fonts, php));
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
 exports.fonts = fonts;
@@ -157,6 +168,7 @@ exports.images = images;
 exports.js = js;
 exports.css = css;
 exports.html = html;
+exports.php = php;
 exports.build = build;
 exports.watch = watch;
 exports.default = watch;
