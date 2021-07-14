@@ -5,6 +5,10 @@
 
 $name = $_POST['name'];
 $phone = $_POST['phone'];
+$pizzaName = $_POST['pizza-name'];
+$pizzaIngredients = $_POST['pizza-ingredients'];
+$pizzaPrice = $_POST['pizza-price'];
+$pizzaFinallyPrice = $_POST['pizza-finally-price'];
 $token = "1856013739:AAEnIkPtoVTBYrJsY9VXcarpfV7YpXWvFFM";
 $chat_id = "-517467730";
 $arr = array(

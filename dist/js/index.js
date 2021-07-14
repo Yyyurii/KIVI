@@ -154,6 +154,8 @@ function renderNewEl(event) {
   let nameEl = parentEl.querySelector('.pizza__name').innerText;
   let ingredientsEl = parentEl.querySelector('.pizza__ingredients').innerText;
   let priceEl = parentEl.querySelector('.pizza__grn').innerText;
+  // let quantityEl = parentEl.querySelector('.order__current-quantity');
+  // console.log(quantityEl);
   let idEl = event.target.dataset.id;
 
   let orderList = document.querySelector('.order__list');
@@ -175,14 +177,18 @@ function renderNewEl(event) {
       </div>
       <div class="order__item-description">
         <div class="order__item-name">${nameEl}</div>
+        <input type="hidden" name="pizza-name" class="sp_push_custom_data " value="${nameEl}">
         <div class="order__item-ingredients">${ingredientsEl}</div>
+        <input type="hidden" name="pizza-ingredients" class="sp_push_custom_data " value="${ingredientsEl}">
         <div class="order__price-value"><span class="order__price-grn-value">${priceEl}</span></div>
+        <input type="hidden" name="pizza-price" class="sp_push_custom_data " value="${priceEl}">
       </div>
       <div class="order__close-button">X</div>
     </div>
     <div class="order__item-price">
       <div class="order__finally-price">
         Всього: <span class="order__finally-price-value">${priceEl}</span>
+        <input type="hidden" name="pizza-finally-price" class="sp_push_custom_data " value="${priceEl}">
       </div>
     </div>
   `;
@@ -210,7 +216,7 @@ function calculateQuantity(event) {
   let currentQuantity = parentEl.querySelector('.order__current-quantity').innerText;
   let price = parseInt(parentEl.querySelector('.order__price-value').innerText.match(/\d+/));
   let totalPay = parentEl.querySelector('.order__finally-price-value');
-  totalPay.innerText = currentQuantity * price;
+  totalPay.innerText = currentQuantity * price + ' грн';
 }
 
 function removeOrderItem(event) {
@@ -236,7 +242,7 @@ function removeOrderItem(event) {
   let total = 0;
 
   prices.forEach(item => {
-    total += Number(item.innerText);
+    total += Number(item.innerText.match(/\d+/));
   });
   totalPrice.innerText = total;
   console.log(total);
