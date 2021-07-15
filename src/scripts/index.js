@@ -161,7 +161,7 @@ function renderNewEl(event) {
   let orderCard = document.createElement('div');
   orderCard.classList.add('order__item');
   orderCard.innerHTML = `
-    <div class="order__item-details">
+      <div class="order__item-details">
       <div class="item-img">
         <img src="${imgSrcEl}" alt="">
         <div class="order__quantity">
@@ -169,7 +169,6 @@ function renderNewEl(event) {
             <img src="images/minus.svg" alt="minus">
           </div>
           <span class="order__current-quantity">1</span>
-          <input type="hidden" name="pizza-quantity" class="sp_push_custom_data " value="${quantityEl}">
           <div class="order__plus-quantity quantity-img">
             <img src="images/plus.svg" alt="plus">
           </div>
@@ -177,7 +176,6 @@ function renderNewEl(event) {
       </div>
       <div class="order__item-description">
         <div class="order__item-name">${nameEl}</div>
-        <input type="hidden" name="pizza-name" class="sp_push_custom_data " value="${nameEl}">
         <div class="order__item-ingredients">${ingredientsEl}</div>
         <div class="order__price-value"><span class="order__price-grn-value">${priceEl}</span></div>
       </div>
@@ -186,7 +184,6 @@ function renderNewEl(event) {
     <div class="order__item-price">
       <div class="order__finally-price">
         Всього: <span class="order__finally-price-value">${priceEl}</span>
-        <input type="hidden" name="pizza-finally-price" class="sp_push_custom_data " value="${priceEl}">
       </div>
     </div>
   `;
@@ -200,7 +197,7 @@ function plusQuantity(event) {
   let currentQuantityValue = parentEl.querySelector('.order__current-quantity').innerText;
   let input = parentEl.querySelector('input');
   currentQuantity.innerText = ++currentQuantityValue;
-  input.value = currentQuantityValue;
+  // input.value = currentQuantityValue;
 }
 
 function minusQuantity(event) {
@@ -210,7 +207,7 @@ function minusQuantity(event) {
   let input = parentEl.querySelector('input');
   if (!currentQuantityValue == 0 && currentQuantityValue > 1) {
     currentQuantity.innerText = --currentQuantityValue;
-    input.value = currentQuantityValue;
+    // input.value = currentQuantityValue;
   }
 }
 
@@ -221,7 +218,7 @@ function calculateQuantity(event) {
   let totalPay = parentEl.querySelector('.order__finally-price-value');
   let input = parentEl.querySelector('input');
   totalPay.innerText = currentQuantity * price + ' грн';
-  input.value = totalPay.innerText;
+  // input.value = totalPay.innerText;
 }
 
 function removeOrderItem(event) {
@@ -252,3 +249,4 @@ function removeOrderItem(event) {
   totalPrice.innerText = total;
   console.log(total);
 })();
+
