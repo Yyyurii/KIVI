@@ -5,12 +5,15 @@
 
 $name = $_POST['name'];
 $phone = $_POST['phone'];
-$email = $_POST['user_email'];
+$pizzaName = $_POST['pizza_name'];
+$pizzaPrice = $_POST['pizza_price'];
 $token = "1856013739:AAEnIkPtoVTBYrJsY9VXcarpfV7YpXWvFFM";
 $chat_id = "-517467730";
 $arr = array(
   'Имя пользователя: ' => $name,
-  'Телефон: ' => $phone
+  'Телефон: ' => $phone,
+  'Піца: ' => implode(", ", $pizzaName),
+  'Всього до оплати: ' => $pizzaPrice
 );
 
 foreach($arr as $key => $value) {

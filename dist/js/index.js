@@ -155,7 +155,6 @@ function renderNewEl(event) {
   let ingredientsEl = parentEl.querySelector('.pizza__ingredients').innerText;
   let priceEl = parentEl.querySelector('.pizza__grn').innerText;
   let quantityEl;
-  let idEl = event.target.dataset.id;
 
   let orderList = document.querySelector('.order__list');
   let orderCard = document.createElement('div');
@@ -176,6 +175,7 @@ function renderNewEl(event) {
       </div>
       <div class="order__item-description">
         <div class="order__item-name">${nameEl}</div>
+        <input type="hidden" name="pizza_name[]" " value="${nameEl}">
         <div class="order__item-ingredients">${ingredientsEl}</div>
         <div class="order__price-value"><span class="order__price-grn-value">${priceEl}</span></div>
       </div>
@@ -184,6 +184,7 @@ function renderNewEl(event) {
     <div class="order__item-price">
       <div class="order__finally-price">
         Всього: <span class="order__finally-price-value">${priceEl}</span>
+        <input type="hidden" name="pizza_price" " value="${priceEl}">
       </div>
     </div>
   `;
