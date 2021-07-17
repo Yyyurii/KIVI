@@ -100,12 +100,13 @@
   grid-template-rows: repeat(1, 1fr);
   grid-template-columns: 1fr 1fr 0;
   grid-template-areas: 'coffee-name price coffee-img' 'coffee-name price coffee-img' 'coffee-name price coffee-img' 'coffee-name price coffee-img' 'coffee-name price coffee-img' 'coffee-name price coffee-img' 'coffee-name price coffee-img';
-  font-size: 56px;
-  line-height: 112px;
+  font-size: 32px;
+  line-height: 2em;
   font-weight: 500;
 }
 
 .coffee-list .coffee-img {
+  max-height: 100%;
   position: relative;
   right: 400px;
 }
@@ -115,13 +116,14 @@
   grid-template-rows: repeat(1, 1fr);
   grid-template-columns: 1fr 1fr 0;
   grid-template-areas: 'coffee-name price coffee-img' 'coffee-name price coffee-img' 'coffee-name price coffee-img' 'coffee-name price coffee-img' 'coffee-name price coffee-img' 'coffee-name price coffee-img' 'coffee-name price coffee-img';
-  font-size: 56px;
-  line-height: 112px;
+  font-size: 32px;
+  line-height: 2em;
   font-weight: 500;
   margin: 50px 0;
 }
 
 .decaf-list .coffee-img {
+  max-height: 100%;
   position: relative;
   right: 400px;
 }

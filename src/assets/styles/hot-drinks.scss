@@ -12,11 +12,12 @@
     'coffee-name price coffee-img'
     'coffee-name price coffee-img'
     'coffee-name price coffee-img';
-  font-size: 56px;
-  line-height: 112px;
+  font-size: 32px;
+  line-height: 2em;
   font-weight: 500;
 
   .coffee-img {
+    max-height: 100%;
     position: relative;
     right: 400px;
   }
