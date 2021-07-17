@@ -8,15 +8,11 @@
       <div class="order__total-pay">
         <h1>До оплати : <span class="order__total-pay-value">1000</span> грн</h1>
       </div>
-      <div class="order__time"> Час :
-        <input type="time" id="appt" name="appt" min="09:00" max="20:30" required>
-      </div>
-      <div class="order__contacts"> Контакти :
+      <div class="order__details">
+        <input required type="time" id="appt" name="appt" min="09:00" max="20:50">
         <input required placeholder="Ім'я" type="text" name="name" id="name">
         <input required placeholder="Телефон" type="number" name="phone" id="phone">
-      </div>
-      <div class="order__comment"> Коментар :
-        <textarea name="comment" id="comment" cols="30" rows="3"></textarea>
+        <textarea placeholder="Коментар" name="comment" id="comment" cols="30" rows="3"></textarea>
       </div>
       <div class="main-content__btn-block">
         <button type="submit" class="order__btn">Замовити</button>
