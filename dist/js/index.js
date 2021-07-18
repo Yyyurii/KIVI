@@ -106,7 +106,6 @@ basket.addEventListener('click', () => {
 toBasket.forEach(basket => {
   basket.addEventListener('click', (event) => {
     renderNewEl(event);
-    // changeQuantity();
     calculateBasketQuantity(event);
     calculateTotalPay();
   })
@@ -172,21 +171,23 @@ function plusQuantity(event) {
   let parentEl = event.target.closest('.order__item');
   let currentQuantity = parentEl.querySelector('.order__current-quantity');
   let currentQuantityValue = parentEl.querySelector('.order__current-quantity').innerText;
-  let input = document.getElementsByName('pizza_name[]');
+  let input = document.getElementsByName('pizza_name[]')[0];
   let nameEl = parentEl.querySelector('.order__item-name').innerText;
   currentQuantity.innerText = ++currentQuantityValue;
   input.value = `${nameEl} ${currentQuantityValue}шт;`;
+  console.log(input.value);
 }
 
 function minusQuantity(event) {
   let parentEl = event.target.closest('.order__item');
   let currentQuantity = parentEl.querySelector('.order__current-quantity');
   let currentQuantityValue = parentEl.querySelector('.order__current-quantity').innerText;
-  let input = document.getElementsByName('pizza_name[]');
+  let input = document.getElementsByName('pizza_name[]')[0];
   let nameEl = parentEl.querySelector('.order__item-name').innerText;
   if (!currentQuantityValue == 0 && currentQuantityValue > 1) {
     currentQuantity.innerText = --currentQuantityValue;
     input.value = `${nameEl} ${currentQuantityValue}шт;`;
+    console.log(input.value);
   }
 }
 
@@ -215,10 +216,10 @@ function removeOrderItem(event) {
   console.log(orderList.childElementCount)
 })();
 
-(calculateTotalPay = () => {
+calculateTotalPay = () => {
   const prices = document.querySelectorAll('.order__finally-price-value');
   const totalPrice = document.querySelector('.order__total-pay-value');
-  let input = document.getElementsByName('pizza_price');
+  let input = document.getElementsByName('pizza_price')[0];
   let total = 0;
 
   prices.forEach(item => {
@@ -226,5 +227,6 @@ function removeOrderItem(event) {
   });
   totalPrice.innerText = total;
   input.value = totalPrice.innerText;
-})();
+  console.log(input.value);
+};
 
