@@ -114,17 +114,14 @@ toBasket.forEach(basket => {
 
 orderList.addEventListener('click', event => {
   if (event.target.classList.contains('order__plus-quantity')) {
-    console.log('plus');
     plusQuantity(event);
     calculateQuantity(event);
     calculateTotalPay();
   } else if (event.target.classList.contains('order__minus-quantity')) {
-    console.log('minus');
     minusQuantity(event);
     calculateQuantity(event);
     calculateTotalPay();
   } else if (event.target.classList.contains('order__close-button')) {
-    console.log('delete');
     removeOrderItem(event);
   }
 });
@@ -153,7 +150,7 @@ function renderNewEl(event) {
       </div>
       <div class="order__item-description">
         <div class="order__item-name">${nameEl}</div>
-        <input type="hidden" name="pizza_name[]" " value="${nameEl}">
+        <input type="hidden" name="pizza_name[]" " value="${nameEl} : ${quantityEl}шт.;">
         <div class="order__item-ingredients">${ingredientsEl}</div>
         <div class="order__price-value"><span class="order__price-grn-value">${priceEl}</span></div>
       </div>
@@ -176,7 +173,7 @@ function plusQuantity(event) {
   let currentQuantityValue = parentEl.querySelector('.order__current-quantity').innerText;
   let input = parentEl.querySelector('input');
   currentQuantity.innerText = ++currentQuantityValue;
-  // input.value = currentQuantityValue;
+  input.value = currentQuantityValue;
 }
 
 function minusQuantity(event) {
@@ -204,6 +201,7 @@ function removeOrderItem(event) {
   let parentEl = event.target.closest('.order__item');
   parentEl.remove();
   calculateBasketQuantity();
+  calculateTotalPay();
 }
 
 (calculateBasketQuantity = () => {
