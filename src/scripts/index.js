@@ -150,7 +150,7 @@ function renderNewEl(event) {
       </div>
       <div class="order__item-description">
         <div class="order__item-name">${nameEl}</div>
-        <input type="hidden" name="pizza_name[]" " value="${nameEl} : ${quantityEl}шт.;">
+        <input type="hidden" name="pizza_name[]" " value="${nameEl}">
         <div class="order__item-ingredients">${ingredientsEl}</div>
         <div class="order__price-value"><span class="order__price-grn-value">${priceEl}</span></div>
       </div>
@@ -164,6 +164,7 @@ function renderNewEl(event) {
     </div>
   `;
   quantityEl = orderCard.querySelector('.order__current-quantity').innerText;
+  console.log(quantityEl);
   orderList.append(orderCard);
 };
 
@@ -171,19 +172,21 @@ function plusQuantity(event) {
   let parentEl = event.target.closest('.order__item');
   let currentQuantity = parentEl.querySelector('.order__current-quantity');
   let currentQuantityValue = parentEl.querySelector('.order__current-quantity').innerText;
-  let input = parentEl.querySelector('input');
+  let input = document.getElementsByName('pizza_name[]');
+  let nameEl = parentEl.querySelector('.order__item-name').innerText;
   currentQuantity.innerText = ++currentQuantityValue;
-  input.value = currentQuantityValue;
+  input.value = `${nameEl} ${currentQuantityValue}шт;`;
 }
 
 function minusQuantity(event) {
   let parentEl = event.target.closest('.order__item');
   let currentQuantity = parentEl.querySelector('.order__current-quantity');
   let currentQuantityValue = parentEl.querySelector('.order__current-quantity').innerText;
-  let input = parentEl.querySelector('input');
+  let input = document.getElementsByName('pizza_name[]');
+  let nameEl = parentEl.querySelector('.order__item-name').innerText;
   if (!currentQuantityValue == 0 && currentQuantityValue > 1) {
     currentQuantity.innerText = --currentQuantityValue;
-    // input.value = currentQuantityValue;
+    input.value = `${nameEl} ${currentQuantityValue}шт;`;
   }
 }
 
@@ -192,9 +195,7 @@ function calculateQuantity(event) {
   let currentQuantity = parentEl.querySelector('.order__current-quantity').innerText;
   let price = parseInt(parentEl.querySelector('.order__price-value').innerText.match(/\d+/));
   let totalPay = parentEl.querySelector('.order__finally-price-value');
-  let input = parentEl.querySelector('input');
   totalPay.innerText = currentQuantity * price + ' грн';
-  // input.value = totalPay.innerText;
 }
 
 function removeOrderItem(event) {
@@ -217,12 +218,13 @@ function removeOrderItem(event) {
 (calculateTotalPay = () => {
   const prices = document.querySelectorAll('.order__finally-price-value');
   const totalPrice = document.querySelector('.order__total-pay-value');
+  let input = document.getElementsByName('pizza_price');
   let total = 0;
 
   prices.forEach(item => {
     total += Number(item.innerText.match(/\d+/));
   });
   totalPrice.innerText = total;
-  console.log(total);
+  input.value = totalPrice.innerText;
 })();
 
