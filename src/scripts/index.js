@@ -1,6 +1,7 @@
 const navMenuItem = document.querySelectorAll('.nav-menu-container');
 const nav = document.querySelector('.nav');
 const order = document.querySelector('.order');
+let orderList = document.querySelector('.order__list');
 const mainContent = document.querySelector('.main-content');
 
 nav.addEventListener('click', (event) => {
@@ -38,13 +39,6 @@ $(".tab").click(function () {
   $(".tab").removeClass("active").eq($(this).index()).addClass("active");
   $(".tab_item").hide().eq($(this).index()).fadeIn()
 }).eq(0).addClass("active");
-// document.querySelectorAll('.tab_item').forEach((item, index) => {
-//   if (item.classList.contains('hot-drinks')) {
-//     item.style.display = 'block'
-//   } else {
-//     item.style.display = 'none'
-//   }
-// })
 
 //header fixed
 const header = $('.header__top-header');
@@ -112,41 +106,28 @@ basket.addEventListener('click', () => {
 toBasket.forEach(basket => {
   basket.addEventListener('click', (event) => {
     renderNewEl(event);
-    changeQuantity();
+    // changeQuantity();
     calculateBasketQuantity(event);
     calculateTotalPay();
   })
 });
 
-(changeQuantity = () => {
-  let plusBtn = document.querySelectorAll('.order__plus-quantity');
-  let minusBtn = document.querySelectorAll('.order__minus-quantity');
-  let deleteBtn = document.querySelectorAll('.order__close-button');
-
-  plusBtn.forEach(btn => {
-    btn.addEventListener('click', (event) => {
-      plusQuantity(event);
-      calculateQuantity(event);
-      calculateTotalPay();
-    })
-  });
-
-  minusBtn.forEach(btn => {
-    btn.addEventListener('click', (event) => {
-      minusQuantity(event);
-      calculateQuantity(event);
-      calculateTotalPay();
-    })
-  });
-
-  deleteBtn.forEach(btn => {
-    btn.addEventListener('click', (event) => {
-      removeOrderItem(event);
-    })
-  })
-})();
-
-
+orderList.addEventListener('click', event => {
+  if (event.target.classList.contains('order__plus-quantity')) {
+    console.log('plus');
+    plusQuantity(event);
+    calculateQuantity(event);
+    calculateTotalPay();
+  } else if (event.target.classList.contains('order__minus-quantity')) {
+    console.log('minus');
+    minusQuantity(event);
+    calculateQuantity(event);
+    calculateTotalPay();
+  } else if (event.target.classList.contains('order__close-button')) {
+    console.log('delete');
+    removeOrderItem(event);
+  }
+});
 
 function renderNewEl(event) {
   let parentEl = event.target.closest('.pizza__container');
@@ -156,7 +137,6 @@ function renderNewEl(event) {
   let priceEl = parentEl.querySelector('.pizza__grn').innerText;
   let quantityEl;
 
-  let orderList = document.querySelector('.order__list');
   let orderCard = document.createElement('div');
   orderCard.classList.add('order__item');
   orderCard.innerHTML = `
@@ -165,11 +145,9 @@ function renderNewEl(event) {
         <img src="${imgSrcEl}" alt="">
         <div class="order__quantity">
           <div class="order__minus-quantity quantity-img">
-            <img src="images/minus.svg" alt="minus">
           </div>
           <span class="order__current-quantity">1</span>
           <div class="order__plus-quantity quantity-img">
-            <img src="images/plus.svg" alt="plus">
           </div>
         </div>
       </div>
@@ -229,7 +207,6 @@ function removeOrderItem(event) {
 }
 
 (calculateBasketQuantity = () => {
-  let orderList = document.querySelector('.order__list');
   if (orderList.childElementCount > 0) {
     basketQuantity.style.opacity = '1';
   } else {

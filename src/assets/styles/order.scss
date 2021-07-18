@@ -72,20 +72,20 @@
     margin: 25px 0 0;
 
     .quantity-img {
+      background-repeat: no-repeat;
+      background-position: center;
       cursor: pointer;
       width: 25px;
       height: 25px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
     }
+  }
 
-    picture {
-      display: flex;
-      padding: 0 30%;
-      cursor: pointer;
-    }
+  &__plus-quantity {
+    background-image: url(../images/plus.svg);
+  }
+
+  &__minus-quantity {
+    background-image: url(../images/minus.svg);
   }
 
   &__item-description {
