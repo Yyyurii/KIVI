@@ -158,7 +158,6 @@ function renderNewEl(event) {
     <div class="order__item-price">
       <div class="order__finally-price">
         Всього: <span class="order__finally-price-value">${priceEl}</span>
-        <input type="hidden" name="pizza_price" " value="${priceEl}">
       </div>
     </div>
   `;
@@ -171,10 +170,10 @@ function plusQuantity(event) {
   let parentEl = event.target.closest('.order__item');
   let currentQuantity = parentEl.querySelector('.order__current-quantity');
   let currentQuantityValue = parentEl.querySelector('.order__current-quantity').innerText;
-  let input = document.getElementsByName('pizza_name[]')[0];
+  let input = parentEl.querySelector('input[name="pizza_name[]"]');
   let nameEl = parentEl.querySelector('.order__item-name').innerText;
   currentQuantity.innerText = ++currentQuantityValue;
-  input.value = `${nameEl} ${currentQuantityValue}шт;`;
+  input.value = `${nameEl} ${currentQuantityValue}шт`;
   console.log(input.value);
 }
 
@@ -182,7 +181,7 @@ function minusQuantity(event) {
   let parentEl = event.target.closest('.order__item');
   let currentQuantity = parentEl.querySelector('.order__current-quantity');
   let currentQuantityValue = parentEl.querySelector('.order__current-quantity').innerText;
-  let input = document.getElementsByName('pizza_name[]')[0];
+  let input = parentEl.querySelector('input[name="pizza_name[]"]');
   let nameEl = parentEl.querySelector('.order__item-name').innerText;
   if (!currentQuantityValue == 0 && currentQuantityValue > 1) {
     currentQuantity.innerText = --currentQuantityValue;
@@ -219,7 +218,7 @@ function removeOrderItem(event) {
 calculateTotalPay = () => {
   const prices = document.querySelectorAll('.order__finally-price-value');
   const totalPrice = document.querySelector('.order__total-pay-value');
-  let input = document.getElementsByName('pizza_price')[0];
+  let input = document.querySelector('input[name="pizza_price"]');
   let total = 0;
 
   prices.forEach(item => {
@@ -227,6 +226,5 @@ calculateTotalPay = () => {
   });
   totalPrice.innerText = total;
   input.value = totalPrice.innerText;
-  console.log(input.value);
 };
 

@@ -7,13 +7,18 @@ $name = $_POST['name'];
 $phone = $_POST['phone'];
 $pizzaName = $_POST['pizza_name'];
 $pizzaPrice = $_POST['pizza_price'];
+$pizzaComment = $_POST['comment'];
+$pizzaTime = $_POST['time'];
 $token = "1856013739:AAEnIkPtoVTBYrJsY9VXcarpfV7YpXWvFFM";
 $chat_id = "-517467730";
 $arr = array(
   'Имя пользователя: ' => $name,
   'Телефон: ' => $phone,
   'Піца: ' => implode(", ", $pizzaName),
-  'Всього до оплати: ' => $pizzaPrice
+  'Час: ' => $pizzaTime,
+  'Коментар: ' => $pizzaComment,
+  'Всього до оплати: ' => $pizzaPrice,
+  
 );
 
 foreach($arr as $key => $value) {
