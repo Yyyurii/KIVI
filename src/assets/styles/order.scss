@@ -5,6 +5,10 @@
   margin: 0 auto;
   display: none;
 
+  &__absent {
+    display: none;
+  }
+
   h1 {
     text-align: center;
     font-size: 46px;
@@ -21,6 +25,7 @@
     max-width: 80%;
     width: 100%;
     margin: 0 auto;
+    padding: 1% 0;
     border-bottom: 1px dashed;
   }
 

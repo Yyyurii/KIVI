@@ -1,8 +1,5 @@
 <?php
 
-/* https://api.telegram.org/bot1856013739:AAEnIkPtoVTBYrJsY9VXcarpfV7YpXWvFFM/getUpdates,
-где, XXXXXXXXXXXXXXXXXXXXXXX - токен вашего бота, полученный ранее */
-
 $name = $_POST['name'];
 $phone = $_POST['phone'];
 $pizzaName = $_POST['pizza_name'];
@@ -28,7 +25,7 @@ foreach($arr as $key => $value) {
 $sendToTelegram = fopen("https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&parse_mode=html&text={$txt}","r");
 
 if ($sendToTelegram) {
-  echo'<h1>Дякуємо за замовлення!</h1>';
+  // echo'<h1>Дякуємо за замовлення!</h1>';
 } else {
   echo "Error";
 }

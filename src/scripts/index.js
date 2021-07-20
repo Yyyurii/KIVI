@@ -1,6 +1,8 @@
 const navMenuItem = document.querySelectorAll('.nav-menu-container');
 const nav = document.querySelector('.nav');
 const order = document.querySelector('.order');
+const orderPresent = document.querySelector('.order__present');
+const orderAbsent = document.querySelector('.order__absent');
 let orderList = document.querySelector('.order__list');
 const mainContent = document.querySelector('.main-content');
 
@@ -98,6 +100,14 @@ const basketQuantity = document.querySelector('.header__basket-quantity');
 basket.addEventListener('click', () => {
   order.style.display = 'block';
   mainContent.style.display = 'none';
+  if (orderList.childElementCount > 0) {
+    orderPresent.style.display = 'block';
+    orderAbsent.style.display = 'none';
+  } else {
+    orderPresent.style.display = 'none';
+    orderAbsent.style.display = 'block';
+  }
+
   navMenuItem.forEach(item => {
     item.classList.remove('_active');
   })
@@ -228,3 +238,88 @@ calculateTotalPay = () => {
   input.value = totalPrice.innerText;
 };
 
+//forms
+const forms = document.querySelectorAll('form');
+const message = {
+  loading: 'Загрузка...',
+  success: 'Спасибо! Скоро мы с вами свяжемся',
+  failure: 'Что-то пошло не так...'
+};
+
+forms.forEach(item => {
+  postData(item);
+});
+
+function postData(form) {
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    let statusMessage = document.createElement('div');
+    statusMessage.classList.add('status');
+    form.appendChild(statusMessage);
+
+    const request = new XMLHttpRequest();
+    request.open('POST', 'telegram.php');
+    const formData = new FormData(form);
+
+    request.send(formData);
+
+    request.addEventListener('load', () => {
+      if (request.status === 200) {
+        console.log(request.response);
+        openModal();
+        form.reset();
+        clearOrderCard();
+        setTimeout(() => {
+          closeModal();
+        }, 3500);
+        orderPresent.style.display = 'none';
+        orderAbsent.style.display = 'block';
+      } else {
+        statusMessage.textContent = message.failure;
+      }
+    });
+  });
+};
+
+//modal
+const modalTrigger = document.querySelectorAll('[data-modal]');
+const modal = document.querySelector('.modal');
+const modalCloseBtn = document.querySelector('[data-close]');
+
+function clearOrderCard() {
+  const orderItem = document.querySelectorAll('.order__item');
+  orderItem.forEach(item => {
+    item.remove();
+  });
+};
+
+modalTrigger.forEach(btn => {
+  btn.addEventListener('click', openModal);
+});
+
+function closeModal() {
+  modal.classList.add('hide');
+  modal.classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+function openModal() {
+  modal.classList.add('show');
+  modal.classList.remove('hide');
+  document.body.style.overflow = 'hidden';
+}
+
+modalCloseBtn.addEventListener('click', closeModal);
+
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    closeModal();
+  }
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.code === "Escape" && modal.classList.contains('show')) {
+    closeModal();
+  }
+});

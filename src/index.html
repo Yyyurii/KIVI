@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="css/footer.min.css">
   <link rel="stylesheet" href="css/scroll-up.min.css">
   <link rel="stylesheet" href="css/order.min.css">
+  <link rel="stylesheet" href="css/modal.min.css">
   <link rel="stylesheet" href="css/simple-adaptive-slider.min.css">
   <base target="_blank">
   <title>KIVI</title>
@@ -43,7 +44,7 @@
 
       <div class="header__top-header">
         <div class="header__logo logo">
-          <img src="images/logo.png" alt="" class="logo">
+          <a href="#pizza"><img src="images/logo.png" alt="" class="logo"></a>
         </div>
         <div class="header__contacts">
           <div class="header__contacts-item">
@@ -53,7 +54,7 @@
             </div>
           </div>
         </div>
-        <div class="header__basket">
+        <div class="header__basket scrollupBtn">
           <span class="header__basket-quantity">1</span>
           <img src="images/basket-64.ico" alt="">
         </div>
@@ -64,7 +65,7 @@
           <nav class="nav__menu">
 
             <div class="nav__menu-item nav-menu-container tab">
-              <a href="">Піца</a>
+              <a name="pizza" href="">Піца</a>
             </div>
             <div class="nav__menu-item nav-menu-container shares-tab tab ">
               <a href="">Акції та новини</a>
@@ -91,6 +92,7 @@
     </header>
 
     @@include('_order.html')
+    @@include('_modal.html')
 
     <div class="slider">
       <div class="slider__wrapper">
