@@ -101,6 +101,10 @@
   display: none;
 }
 
+.order__absent {
+  display: none;
+}
+
 .order h1 {
   text-align: center;
   font-size: 46px;
