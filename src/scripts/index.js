@@ -323,3 +323,16 @@ document.addEventListener('keydown', (e) => {
     closeModal();
   }
 });
+
+$('a').click(function(){
+  console.log($(window).trigger('hashchange'));
+});
+
+// Time
+const inputTime = document.querySelector('#appt');
+const date = new Date();
+const currentHours = date.getHours();
+const currentMinutes = date.getMinutes() + 20;
+inputTime.value = `${currentHours}:${currentMinutes}`;
+console.log(currentHours);
+console.log(currentMinutes);
