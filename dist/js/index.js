@@ -184,7 +184,6 @@ function plusQuantity(event) {
   let nameEl = parentEl.querySelector('.order__item-name').innerText;
   currentQuantity.innerText = ++currentQuantityValue;
   input.value = `${nameEl} ${currentQuantityValue}шт`;
-  console.log(input.value);
 }
 
 function minusQuantity(event) {
@@ -196,7 +195,6 @@ function minusQuantity(event) {
   if (!currentQuantityValue == 0 && currentQuantityValue > 1) {
     currentQuantity.innerText = --currentQuantityValue;
     input.value = `${nameEl} ${currentQuantityValue}шт;`;
-    console.log(input.value);
   }
 }
 
@@ -334,5 +332,3 @@ const date = new Date();
 const currentHours = date.getHours();
 const currentMinutes = date.getMinutes() + 20;
 inputTime.value = `${currentHours}:${currentMinutes}`;
-console.log(currentHours);
-console.log(currentMinutes);
